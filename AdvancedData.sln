@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedData.WebApi", "AdvancedData.WebApi\AdvancedData.WebApi.csproj", "{413E297F-0594-4474-B575-CBEF02CAF889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedData.Data", "AdvancedData.Data\AdvancedData.Data.csproj", "{B33F205C-769D-4FE0-A5D4-A0C8741D05EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{413E297F-0594-4474-B575-CBEF02CAF889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{413E297F-0594-4474-B575-CBEF02CAF889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{413E297F-0594-4474-B575-CBEF02CAF889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{413E297F-0594-4474-B575-CBEF02CAF889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B33F205C-769D-4FE0-A5D4-A0C8741D05EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B33F205C-769D-4FE0-A5D4-A0C8741D05EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B33F205C-769D-4FE0-A5D4-A0C8741D05EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B33F205C-769D-4FE0-A5D4-A0C8741D05EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A43CA649-E970-4817-9BB1-DAB60A17DA69}
+	EndGlobalSection
+EndGlobal
