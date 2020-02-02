@@ -1,9 +1,11 @@
-// ReSharper disable InconsistentNaming
+﻿using System;
+using System.Collections.Generic;
+
 namespace AdvancedData.Data.Entities
 {
-    public class MLReceiversQuantityMatzosView
+    public partial class MLReceiversQuantityMatzosView
     {
-        public decimal ReceiverID { get; set; }
+        public decimal ReceiverId { get; set; }
         public decimal? Quantity { get; set; }
     }
 }

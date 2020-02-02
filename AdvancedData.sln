@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29521.150
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedData.WebApi", "AdvancedData.WebApi\AdvancedData.WebApi.csproj", "{413E297F-0594-4474-B575-CBEF02CAF889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedData.WebApi", "AdvancedData.WebApi\AdvancedData.WebApi.csproj", "{413E297F-0594-4474-B575-CBEF02CAF889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedData.Data", "AdvancedData.Data\AdvancedData.Data.csproj", "{B33F205C-769D-4FE0-A5D4-A0C8741D05EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedData.Data", "AdvancedData.Data\AdvancedData.Data.csproj", "{B33F205C-769D-4FE0-A5D4-A0C8741D05EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

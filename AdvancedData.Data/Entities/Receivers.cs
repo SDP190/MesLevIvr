@@ -1,28 +1,33 @@
-using System;
-// ReSharper disable InconsistentNaming
+﻿using System;
+using System.Collections.Generic;
 
 namespace AdvancedData.Data.Entities
 {
-    public class Receivers
+    public partial class Receivers
     {
-        public decimal ReceiverID { get; set; }
-        public string dTitle { get; set; }
+        public Receivers()
+        {
+            ReceiversItemsOrders = new HashSet<ReceiversItemsOrders>();
+        }
+
+        public decimal ReceiverId { get; set; }
+        public string DTitle { get; set; }
         public string FirstName { get; set; }
         public string MiddleInitial { get; set; }
         public string LastName { get; set; }
         public string Nickname { get; set; }
         public string HdTitle { get; set; }
-        public string HFirstName { get; set; }
-        public string HMI { get; set; }
-        public string HLastName { get; set; }
-        public string HNickName { get; set; }
-        public string HSuffix { get; set; }
+        public string HfirstName { get; set; }
+        public string Hmi { get; set; }
+        public string HlastName { get; set; }
+        public string HnickName { get; set; }
+        public string Hsuffix { get; set; }
         public string SpouseTitle { get; set; }
         public string SpouseName { get; set; }
         public string SpouseHebrewTitle { get; set; }
         public string SpouseHebrewName { get; set; }
         public string SpouseNickname { get; set; }
-        public string HSpouseSuffix { get; set; }
+        public string HspouseSuffix { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }
@@ -46,22 +51,22 @@ namespace AdvancedData.Data.Entities
         public decimal? Tuition { get; set; }
         public string DebtDescription { get; set; }
         public string Debttowhomandhowmuch { get; set; }
-        public decimal? Grocerys_money { get; set; }
+        public decimal? GrocerysMoney { get; set; }
         public string Shul { get; set; }
-        public string NameandNumberofRAV { get; set; }
+        public string NameandNumberofRav { get; set; }
         public string AskenNameandnumber { get; set; }
         public bool? Active { get; set; }
         public DateTime AddDate { get; set; }
-        public string CardID { get; set; }
-        public decimal AddUserID { get; set; }
+        public string CardId { get; set; }
+        public decimal AddUserId { get; set; }
         public DateTime ModifyDate { get; set; }
-        public decimal ModifyUserID { get; set; }
+        public decimal ModifyUserId { get; set; }
         public string Address2 { get; set; }
         public bool? Car { get; set; }
         public string Father { get; set; }
         public string FatherInLaw { get; set; }
-        public string ID { get; set; }
-        public string IDSpouse { get; set; }
+        public string Id { get; set; }
+        public string Idspouse { get; set; }
         public int? Kids { get; set; }
         public int? KidsMarried { get; set; }
         public string Kollel { get; set; }
@@ -73,7 +78,9 @@ namespace AdvancedData.Data.Entities
         public string WorkPlace { get; set; }
         public string Category { get; set; }
         public int? KidsOver16 { get; set; }
-        public Guid? OID { get; set; }
+        public Guid? Oid { get; set; }
         public string Email { get; set; }
+
+        public virtual ICollection<ReceiversItemsOrders> ReceiversItemsOrders { get; set; }
     }
 }

@@ -1,5 +1,9 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 
 namespace AdvancedData.Data.Models
 {
@@ -10,20 +14,22 @@ namespace AdvancedData.Data.Models
     /// </summary>
     public partial class TelegroundRequest
     {
-        [JsonProperty("call_id")] public string CallId { get; set; }
+        
+        [JsonPropertyName("call_id")] public string CallId { get; set; }
 
-        [JsonProperty("cid")] public string Cid { get; set; }
+        [JsonPropertyName("cid")] public string Cid { get; set; }
 
-        [JsonProperty("branch_data:")] public List<BranchData> BranchData { get; set; }
+        [JsonPropertyName("branch_data:")]
+        public IEnumerable<BranchData> BranchData { get; set; }
 
-        [JsonProperty("variables")] public Dictionary<string, string> Variables { get; set; }
+        [JsonPropertyName("variables")] public Dictionary<string, string> Variables { get; set; }
     }
 
     public partial class BranchData
     {
-        [JsonProperty("branch")] public long Branch { get; set; }
+        [JsonPropertyName("branch")] public long Branch { get; set; }
 
-        [JsonProperty("input")] public long Input { get; set; }
+        [JsonPropertyName("input")] public long Input { get; set; }
     }
 
     

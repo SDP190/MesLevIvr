@@ -1,13 +1,15 @@
-// ReSharper disable InconsistentNaming
+﻿using System;
+using System.Collections.Generic;
+
 namespace AdvancedData.Data.Entities
 {
-    public class MLItemView
+    public partial class MLItemView
     {
-        public decimal ItemID { get; set; }
+        public decimal ItemId { get; set; }
         public string ItemName { get; set; }
         public decimal? Quantity { get; set; }
-        public decimal? was { get; set; }
-        public decimal? went { get; set; }
+        public decimal? Was { get; set; }
+        public decimal? Went { get; set; }
         public decimal Price { get; set; }
     }
 }

@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AdvancedData.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,6 +29,16 @@ namespace AdvancedData.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddDbContext<AdvancedDataContext>(options =>
+options.UseSqlServer(Configuration.GetConnectionString("sample")));
+
+            //SDP Note 1: since repository has specific usage, there is no need to design an interface for it, 
+            //the class may be tightly coupled throuhgt the application cause its not expected to have many variations.
+            //As so, tough we still add it as a service to dependency injection, we don't bother to register it with an interface
+            //as its usually recomended, but straight to class type itself.
+            services.AddScoped(typeof(AdvancedDataRepository));
+
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>

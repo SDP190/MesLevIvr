@@ -1,11 +1,12 @@
-// ReSharper disable InconsistentNaming
+﻿using System;
+using System.Collections.Generic;
+
 namespace AdvancedData.Data.Entities
 {
-    public class DonorsTendersCreditCards
+    public partial class DonorsTendersCreditCards
     {
-
-        public decimal DonorTenderCreditCardID { get; set; }
-        public decimal DonorID { get; set; }
+        public decimal DonorTenderCreditCardId { get; set; }
+        public decimal DonorId { get; set; }
         public string CreditCardType { get; set; }
         public string CardNumber { get; set; }
         public byte? ExpirationDateMonth { get; set; }
@@ -18,11 +19,11 @@ namespace AdvancedData.Data.Entities
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public bool Active { get; set; }
-        public string CVV { get; set; }
+        public bool? Active { get; set; }
+        public string Cvv { get; set; }
         public string CardNumberLast4 { get; set; }
         public byte[] Data { get; set; }
         public bool? SaveCard { get; set; }
-        public string TokenID { get; set; }
+        public string TokenId { get; set; }
     }
 }

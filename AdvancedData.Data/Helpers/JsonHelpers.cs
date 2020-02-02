@@ -5,17 +5,17 @@ using Newtonsoft.Json.Converters;
 namespace AdvancedData.Data.Helpers
 {
 
-    public partial class TelegroundRequest
-    {
-        public static Models.TelegroundRequest FromJson(string json) =>
-            JsonConvert.DeserializeObject<Models.TelegroundRequest>(json, Converter.Settings);
-    }
+    //public partial class TelegroundRequest
+    //{
+    //    public static Models.TelegroundRequest FromJson(string json) =>
+    //        JsonConvert.DeserializeObject<Models.TelegroundRequest>(json, Converter.Settings);
+    //}
 
-    public partial class TelegroundResponse
-    {
-        public static Models.TelegroundResponse FromJson(string json) =>
-            JsonConvert.DeserializeObject<Models.TelegroundResponse>(json, Converter.Settings);
-    }
+    //public partial class TelegroundResponse
+    //{
+    //    public static Models.TelegroundResponse FromJson(string json) =>
+    //        JsonConvert.DeserializeObject<Models.TelegroundResponse>(json, Converter.Settings);
+    //}
 
 
     public static class Serialize

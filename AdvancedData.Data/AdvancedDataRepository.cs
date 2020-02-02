@@ -27,14 +27,14 @@ namespace AdvancedData.Data
         //    return _context.Receivers.Take(20);
         //}
 
-        public IEnumerable<Receivers> GetReceiversByPhone(string phone)
+        public IQueryable<Receivers> GetReceiversByPhone(string phone)
         {
-            return _context.Receivers.Where(receiver =>
+             return _context.Receivers.Where(receiver =>
                 receiver.HomePhone == phone
                 || receiver.CellPhone == phone);
         }
 
-        public void AddNewReceiver(string firstName, string lastName, string homePhone)
+        public async Task<Receivers> AddNewReceiverAsync(string firstName, string lastName, string homePhone)
         {
             var date = DateTime.Now;
             var receiver = new Receivers
@@ -47,13 +47,26 @@ namespace AdvancedData.Data
                 Zip = "",
                 HomePhone = homePhone,
                 AddDate = date,
-                AddUserID = 1,
+                AddUserId = 1,
                 ModifyDate = date,
-                ModifyUserID = 1
+                ModifyUserId = 1
             };
 
-            _context.Receivers.Add(receiver);
-            _context.SaveChanges();
+            var nreceiver = _context.Receivers.Add(receiver);
+            await _context.SaveChangesAsync();
+            return nreceiver.Entity;
+        }
+
+        public async Task<bool> ReceiverHasOrdersAsync(decimal receiverId)
+        {
+            var mlrQMV = await this._context.MLReceiversQuantityMatzosView.FirstOrDefaultAsync(ml => ml.ReceiverId == receiverId);
+            return (mlrQMV!=null && mlrQMV.Quantity > 0);
+            
+        }
+
+        public async Task<MLItemView> GetMatzahTypeItemInfoAsync(decimal matzahTypeId)
+        {
+            return await this._context.MLItemView.FirstOrDefaultAsync(mlIv => mlIv.ItemId == matzahTypeId);
         }
     }
 }

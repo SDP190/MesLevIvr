@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace AdvancedData.Data.Models
 {
@@ -11,33 +11,55 @@ namespace AdvancedData.Data.Models
     /// </summary>
     public partial class TelegroundResponse
     {
-        [JsonProperty("goto")]
-        public long Goto { get; set; }
+        public TelegroundResponse()
+        {}
 
-        [JsonProperty("play")]
+        [JsonPropertyName("goto")]
+        public long? Goto { get; set; }
+
+        [JsonPropertyName("play")]
         public List<Play> Play { get; set; }
 
-        [JsonProperty("inputs")]
+        [JsonPropertyName("inputs")]
         public Dictionary<string, long> Inputs { get; set; }
 
-        [JsonProperty("variables")]
+        [JsonPropertyName("variables")]
         public Dictionary<string, string> Variables { get; set; }
     }
 
+   
     public partial class Play
     {
-        [JsonProperty("type")]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
 
-        [JsonProperty("text", NullValueHandling = NullValueHandling.Ignore)]
+        
+        [JsonPropertyName("text")]
         public string Text { get; set; }
 
-        [JsonProperty("album", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("album")]
         public long? Album { get; set; }
 
-        [JsonProperty("sort", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("sort")]
         public long? Sort { get; set; }
     }
+
+
+    //public partial class Play
+    //{
+    //    [JsonPropertyName("type")]
+    //    public string Type { get; set; }
+
+
+    //    [JsonPropertyName("text", NullValueHandling = NullValueHandling.Ignore)]
+    //    public string Text { get; set; }
+
+    //    [JsonPropertyName("album", NullValueHandling = NullValueHandling.Ignore)]
+    //    public long? Album { get; set; }
+
+    //    [JsonPropertyName("sort", NullValueHandling = NullValueHandling.Ignore)]
+    //    public long? Sort { get; set; }
+    //}
 
 
 }
