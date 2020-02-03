@@ -49,6 +49,12 @@ namespace AdvancedData.WebApi.Controllers
             _ad_repository = ad_repository;
         }
 
+        [HttpGet("test")]
+        public ActionResult Test()
+        {
+            return Ok("test123");
+        }
+
         //Branch 44 (Yiddish), 515 (English)
         [HttpPost("inquireCustomerStatus")]
         public async Task<ActionResult<TelegroundResponse>> InquireCustomerStatus([FromBody] TelegroundRequest request)
