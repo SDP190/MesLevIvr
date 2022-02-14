@@ -10,7 +10,7 @@ namespace AdvancedData.Data.Entities
             ReceiversItemsOrderPayments = new HashSet<ReceiversItemsOrderPayments>();
         }
 
-        public decimal PaymentId { get; set; }
+        public decimal PaymentId { get; set; } //Test change
         public decimal DonorId { get; set; }
         public DateTime Date { get; set; }
         public decimal Value { get; set; }
